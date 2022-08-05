@@ -51,6 +51,7 @@
   "block.createbb.trapped_brass_call_bell": "Trapped Brass Call Bell",
 
   "sudafed_tooltip": "§8'sudos.",
+  "not_consumed_tooltip": "§8'sudos.",
   "sudafed_box_tooltip": "§8Box of 'sudos.",
   "match_tooltip": "§8Single-use firestarter.",
   "brass_call_bell_tooltip": "§8Ding!",

@@ -1,6 +1,6 @@
 package com.jetpacker06.CreateBrokenBad.register;
 
-import com.jetpacker06.CreateBrokenBad.custom.BrassCallBellAdvancementTrigger;
+import com.jetpacker06.CreateBrokenBad.advancements.BrassCallBellAdvancementTrigger;
 import net.minecraft.advancements.CriteriaTriggers;
 
 public class AllCustomTriggerAdvancements {

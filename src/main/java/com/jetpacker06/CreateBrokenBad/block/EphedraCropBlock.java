@@ -1,4 +1,4 @@
-package com.jetpacker06.CreateBrokenBad.custom;
+package com.jetpacker06.CreateBrokenBad.block;
 
 import com.jetpacker06.CreateBrokenBad.register.AllItems;
 import net.minecraft.world.level.ItemLike;

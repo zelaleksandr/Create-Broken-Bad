@@ -1,5 +1,6 @@
-package com.jetpacker06.CreateBrokenBad.custom;
+package com.jetpacker06.CreateBrokenBad.block.blockentity;
 
+import com.jetpacker06.CreateBrokenBad.block.BrassCallBellBlock;
 import com.jetpacker06.CreateBrokenBad.register.AllBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;

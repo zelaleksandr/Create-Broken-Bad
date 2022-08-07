@@ -1,4 +1,4 @@
-package com.jetpacker06.CreateBrokenBad.custom;
+package com.jetpacker06.CreateBrokenBad.advancements;
 
 import com.google.gson.JsonObject;
 import com.jetpacker06.CreateBrokenBad.CreateBrokenBad;

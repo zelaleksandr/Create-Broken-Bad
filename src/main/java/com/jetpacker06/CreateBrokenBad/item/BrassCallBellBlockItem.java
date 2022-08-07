@@ -1,4 +1,4 @@
-package com.jetpacker06.CreateBrokenBad.custom;
+package com.jetpacker06.CreateBrokenBad.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;

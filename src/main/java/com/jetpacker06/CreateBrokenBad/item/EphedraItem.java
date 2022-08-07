@@ -1,4 +1,4 @@
-package com.jetpacker06.CreateBrokenBad.custom;
+package com.jetpacker06.CreateBrokenBad.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -10,22 +10,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class NonConsumedCatalystItem extends Item {
-    public NonConsumedCatalystItem(Properties pProperties) {
+public class EphedraItem extends Item {
+    public EphedraItem(Properties pProperties) {
         super(pProperties);
     }
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(new TranslatableComponent("not_consumed_tooltip"));
-    }
-
-    @Override
-    public boolean hasContainerItem(ItemStack stack) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getContainerItem(ItemStack itemStack) {
-        return itemStack;
+        pTooltipComponents.add(new TranslatableComponent("ephedra_tooltip"));
     }
 }

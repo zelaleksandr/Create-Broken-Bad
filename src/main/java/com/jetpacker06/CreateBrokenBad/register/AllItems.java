@@ -1,7 +1,7 @@
 package com.jetpacker06.CreateBrokenBad.register;
 
 import com.jetpacker06.CreateBrokenBad.CreateBrokenBad;
-import com.jetpacker06.CreateBrokenBad.custom.*;
+import com.jetpacker06.CreateBrokenBad.item.*;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.FlowingFluid;

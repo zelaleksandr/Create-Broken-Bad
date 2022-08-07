@@ -1,7 +1,7 @@
-package com.jetpacker06.CreateBrokenBad.custom;
+package com.jetpacker06.CreateBrokenBad.item;
 
+import com.jetpacker06.CreateBrokenBad.block.TrayBlock;
 import com.jetpacker06.CreateBrokenBad.register.AllBlocks;
-import com.jetpacker06.CreateBrokenBad.register.AllSoundEvents;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

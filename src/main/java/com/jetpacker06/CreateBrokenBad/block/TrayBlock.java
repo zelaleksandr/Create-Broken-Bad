@@ -1,4 +1,4 @@
-package com.jetpacker06.CreateBrokenBad.custom;
+package com.jetpacker06.CreateBrokenBad.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

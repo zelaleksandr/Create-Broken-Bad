@@ -1,9 +1,11 @@
-package com.jetpacker06.CreateBrokenBad.custom;
+package com.jetpacker06.CreateBrokenBad.block;
 
+import com.jetpacker06.CreateBrokenBad.block.blockentity.TrappedBrassCallBellBlockEntity;
 import com.jetpacker06.CreateBrokenBad.register.AllBlockEntities;
 import com.jetpacker06.CreateBrokenBad.register.AllCustomTriggerAdvancements;
 import com.jetpacker06.CreateBrokenBad.register.AllSoundEvents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -30,10 +32,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Stream;
 
-public class BrassCallBellBlock extends BaseEntityBlock {
-    public BrassCallBellBlock(Properties p_49795_) {
+public class TrappedBrassCallBellBlock extends BaseEntityBlock {
+    public TrappedBrassCallBellBlock(Properties p_49795_) {
         super(p_49795_);
     }
+    public int getSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide) {
+        return pBlockState.getValue(DOWN) ? 15 : 0;
+    }
+
     public static BooleanProperty DOWN = BooleanProperty.create("down");
 
     @Override
@@ -74,6 +80,7 @@ public class BrassCallBellBlock extends BaseEntityBlock {
         pState = pState.setValue(DOWN, true);
         pLevel.setBlock(pPos, pState, 3);
         pLevel.playSound(pPlayer,pPos, AllSoundEvents.BRASS_CALL_BELL_DING.get(), SoundSource.BLOCKS, 2f, 1f);
+       // this.isSignalSource
         return InteractionResult.sidedSuccess(pLevel.isClientSide);
     }
     @Override
@@ -81,21 +88,20 @@ public class BrassCallBellBlock extends BaseEntityBlock {
         return RenderShape.MODEL;
     }
 
-    @Nullable
-    @Override
-    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new BrassCallBellBlockEntity(pPos, pState);
-    }
-
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         pLevel.removeBlockEntity(pPos);
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+        return new TrappedBrassCallBellBlockEntity(pPos, pState);
+    }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        return createTickerHelper(pBlockEntityType, AllBlockEntities.BRASS_CALL_BELL.get(), BrassCallBellBlockEntity::tick);
+        return createTickerHelper(pBlockEntityType, AllBlockEntities.TRAPPED_BRASS_CALL_BELL.get(), TrappedBrassCallBellBlockEntity::tick);
     }
 }

@@ -1,8 +1,8 @@
 package com.jetpacker06.CreateBrokenBad.register;
 
 import com.jetpacker06.CreateBrokenBad.CreateBrokenBad;
-import com.jetpacker06.CreateBrokenBad.custom.BrassCallBellBlockEntity;
-import com.jetpacker06.CreateBrokenBad.custom.TrappedBrassCallBellBlockEntity;
+import com.jetpacker06.CreateBrokenBad.block.blockentity.BrassCallBellBlockEntity;
+import com.jetpacker06.CreateBrokenBad.block.blockentity.TrappedBrassCallBellBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

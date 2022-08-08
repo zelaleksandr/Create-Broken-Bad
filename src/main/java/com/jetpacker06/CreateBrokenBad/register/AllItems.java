@@ -33,6 +33,7 @@ public class AllItems {
     CYANIDE = ingredient("cyanide"),
     ALUMINOSILICATE_CATALYST = ITEMS.register("aluminosilicate_catalyst", () -> new NonConsumedCatalystItem(new Item.Properties().stacksTo(1).tab(ItemGroup.CREATEBB))),
     ALUMINOSILICATE_BIT = ingredient("aluminosilicate_bit"),
+    ALUMINOSILICATE_CHUNK = ingredient("aluminosilicate_chunk"),
     NITROGEN = ingredient("nitrogen"),
     BLUE_METH = ITEMS.register("blue_meth", () -> new MethItem.Blue(new Item.Properties().tab(ItemGroup.CREATEBB))),
 

@@ -1,106 +1,21 @@
 {
-  "type": "create:compacting",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "createbb:aluminosilicate_bit"
+      "item": "createbb:aluminosilicate_chunk"
     },
     {
-      "item": "createbb:aluminosilicate_bit"
+      "item": "createbb:aluminosilicate_chunk"
     },
     {
-      "item": "createbb:aluminosilicate_bit"
+      "item": "createbb:aluminosilicate_chunk"
     },
     {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
-    },
-    {
-      "item": "createbb:aluminosilicate_bit"
+      "item": "createbb:aluminosilicate_chunk"
     }
   ],
-  "results": [
-    {
-      "item": "createbb:aluminosilicate_catalyst"
-    }
-  ]
+  "result": {
+    "item": "createbb:aluminosilicate_catalyst",
+    "count": 1
+  }
 }

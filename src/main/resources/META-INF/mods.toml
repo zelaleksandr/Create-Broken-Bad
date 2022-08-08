@@ -54,3 +54,15 @@ description='''An addon for Create inspired by Breaking Bad and loosely based on
     versionRange="[1.18.1,1.19)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.createbb]]
+modId="create"
+mandatory=true
+ordering="NONE"
+side="BOTH"
+versionRange="[v0.5.0c,)"
+[[dependencies.createbb]]
+modId="flywheel"
+mandatory=true
+ordering="NONE"
+side="BOTH"
+versionRange="[1.18-0.6.2,)"

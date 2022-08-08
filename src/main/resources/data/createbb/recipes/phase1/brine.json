@@ -4,11 +4,17 @@
     {
       "fluid": "minecraft:water",
       "amount": 200
+    },
+    {
+      "item": "createbb:aluminosilicate_catalyst"
     }
   ],
   "results": [
     {
       "item": "createbb:brine"
+    },
+    {
+      "item": "createbb:aluminosilicate_catalyst"
     }
   ],
   "heatRequirement": "heated"

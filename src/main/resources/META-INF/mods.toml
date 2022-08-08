@@ -27,7 +27,7 @@ displayName="Create: Broken Bad" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="createbb.png" #optional
+logoFile="logo.png" #optional
 # A text field displayed in the mod UI
 credits="jetpacker06" #optional
 # A text field displayed in the mod UI
@@ -64,5 +64,5 @@ versionRange="[v0.5.0c,)"
 modId="flywheel"
 mandatory=true
 ordering="NONE"
-side="BOTH"
+side="CLIENT"
 versionRange="[1.18-0.6.2,)"

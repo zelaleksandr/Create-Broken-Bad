@@ -29,9 +29,9 @@ public class AllItems {
 
     CRUSHED_COPPER = ingredient("crushed_copper"),
     CRUSHED_ZINC = ingredient("crushed_zinc"),
-    COPPER_ZINC_CATALYST = ITEMS.register("copper_zinc_catalyst", () -> new NonConsumedCatalystItem(new Item.Properties().stacksTo(1).tab(ItemGroup.CREATEBB))),
+    COPPER_ZINC_CATALYST = ITEMS.register("copper_zinc_catalyst", () -> new NonConsumedCatalystItem(new Item.Properties().tab(ItemGroup.CREATEBB))),
     CYANIDE = ingredient("cyanide"),
-    ALUMINOSILICATE_CATALYST = ITEMS.register("aluminosilicate_catalyst", () -> new NonConsumedCatalystItem(new Item.Properties().stacksTo(1).tab(ItemGroup.CREATEBB))),
+    ALUMINOSILICATE_CATALYST = ITEMS.register("aluminosilicate_catalyst", () -> new NonConsumedCatalystItem(new Item.Properties().tab(ItemGroup.CREATEBB))),
     ALUMINOSILICATE_BIT = ingredient("aluminosilicate_bit"),
     ALUMINOSILICATE_CHUNK = ingredient("aluminosilicate_chunk"),
     NITROGEN = ingredient("nitrogen"),
@@ -55,7 +55,7 @@ public class AllItems {
         return ingredient(name, new Item.Properties().tab(ItemGroup.CREATEBB));
     }
     public static RegistryObject<Item> bucket(String name, RegistryObject<FlowingFluid> fluid) {
-        return ITEMS.register(name, () -> new BucketItem(fluid, new Item.Properties().tab(ItemGroup.CREATEBB).craftRemainder(Items.BUCKET)));
+        return ITEMS.register(name, () -> new BucketItem(fluid, new Item.Properties().tab(ItemGroup.CREATEBB).craftRemainder(Items.BUCKET).stacksTo(1)));
     }
     public static RegistryObject<Item> ingredient(String name, Item.Properties pProperties) {
         return ITEMS.register(name, () -> new Item(pProperties));

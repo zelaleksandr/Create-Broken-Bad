@@ -1,0 +1,9 @@
+Credits
+
+Code: jetpacker06
+Sudafed Box texture: chickennougat
+All other textures and bell models: Drigonis_
+
+Translations
+PT_BR: FITFC
+ES_ES: albertosaurio65

@@ -1,10 +1,10 @@
 package com.jetpacker06.CreateBrokenBad.block;
 
-import com.jetpacker06.CreateBrokenBad.block.blockentity.BrassCallBellBlockEntity;
 import com.jetpacker06.CreateBrokenBad.register.CBBBlockEntities;
 import com.jetpacker06.CreateBrokenBad.register.AllCustomTriggerAdvancements;
 import com.jetpacker06.CreateBrokenBad.register.AllSoundEvents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -40,6 +40,7 @@ public class BrassCallBellBlock extends BaseEntityBlock {
     public static BooleanProperty DOWN = BooleanProperty.create("down");
 
     @Override
+    @SuppressWarnings("deprecation")
     public @NotNull VoxelShape getShape(BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
         if (pState.getValue(DOWN)) {
             return downShape;
@@ -72,6 +73,7 @@ public class BrassCallBellBlock extends BaseEntityBlock {
 
     @ParametersAreNonnullByDefault
     @Override
+    @SuppressWarnings("deprecation")
     public @NotNull InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (pPlayer instanceof ServerPlayer) {
             AllCustomTriggerAdvancements.DING.trigger((ServerPlayer) pPlayer);
@@ -108,5 +110,16 @@ public class BrassCallBellBlock extends BaseEntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         return createTickerHelper(pBlockEntityType, CBBBlockEntities.BRASS_CALL_BELL.get(), BrassCallBellBlockEntity::tick);
+    }
+    public static class Trapped extends BrassCallBellBlock {
+
+        public Trapped(Properties p_49795_) {
+            super(p_49795_);
+        }
+        @Override
+        @SuppressWarnings("deprecation")
+        public int getSignal(BlockState pBlockState, @NotNull BlockGetter pBlockAccess, @NotNull BlockPos pPos, @NotNull Direction pSide) {
+            return pBlockState.getValue(DOWN) ? 15 : 0;
+        }
     }
 }

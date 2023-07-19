@@ -2,7 +2,6 @@ package com.jetpacker06.CreateBrokenBad.register;
 
 import com.jetpacker06.CreateBrokenBad.block.BrassCallBellBlock;
 import com.jetpacker06.CreateBrokenBad.block.EphedraBlock;
-import com.jetpacker06.CreateBrokenBad.block.TrappedBrassCallBellBlock;
 import com.jetpacker06.CreateBrokenBad.block.TrayBlock;
 import com.simibubi.create.foundation.data.TagGen;
 import com.tterrag.registrate.Registrate;
@@ -14,7 +13,7 @@ import net.minecraft.world.level.block.Blocks;
 public class CBBBlocks {
     public static BlockEntry<EphedraBlock> EPHEDRA_CROP_BLOCK;
     public static BlockEntry<BrassCallBellBlock> BRASS_CALL_BELL;
-    public static BlockEntry<TrappedBrassCallBellBlock> TRAPPED_BRASS_CALL_BELL;
+    public static BlockEntry<BrassCallBellBlock.Trapped> TRAPPED_BRASS_CALL_BELL;
     public static BlockEntry<TrayBlock.Blue> BLUE_METH_TRAY;
     public static BlockEntry<TrayBlock.White> WHITE_METH_TRAY;
     public static BlockEntry<TrayBlock.Empty> TRAY;
@@ -31,7 +30,7 @@ public class CBBBlocks {
                 .transform(TagGen.pickaxeOnly())
                 .simpleItem()
                 .register();
-        TRAPPED_BRASS_CALL_BELL = REGISTRATE.block("trapped_brass_call_bell", TrappedBrassCallBellBlock::new)
+        TRAPPED_BRASS_CALL_BELL = REGISTRATE.block("trapped_brass_call_bell", BrassCallBellBlock.Trapped::new)
                 .initialProperties(metal)
                 .transform(TagGen.pickaxeOnly())
                 .simpleItem()

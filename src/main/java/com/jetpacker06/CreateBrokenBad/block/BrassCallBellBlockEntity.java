@@ -1,7 +1,5 @@
-package com.jetpacker06.CreateBrokenBad.block.blockentity;
+package com.jetpacker06.CreateBrokenBad.block;
 
-import com.jetpacker06.CreateBrokenBad.block.BrassCallBellBlock;
-import com.jetpacker06.CreateBrokenBad.block.TrappedBrassCallBellBlock;
 import com.jetpacker06.CreateBrokenBad.register.CBBBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -10,12 +8,13 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class TrappedBrassCallBellBlockEntity extends BlockEntity {
+public class BrassCallBellBlockEntity extends BlockEntity {
     private int ticksRemaining = 5;
-    public TrappedBrassCallBellBlockEntity(BlockEntityType<?> pType, BlockPos pWorldPosition, BlockState pBlockState) {
+    public BrassCallBellBlockEntity(BlockEntityType<?> pType, BlockPos pWorldPosition, BlockState pBlockState) {
         super(pType, pWorldPosition, pBlockState);
     }
-    public static void tick(Level pLevel, BlockPos pPos, BlockState pState, TrappedBrassCallBellBlockEntity pBlockEntity) {
+
+    public static void tick(Level pLevel, BlockPos pPos, BlockState pState, BrassCallBellBlockEntity pBlockEntity) {
         if (pState.getValue(BrassCallBellBlock.DOWN)) {
             if (pBlockEntity.ticksRemaining > 0) {
                 pBlockEntity.ticksRemaining--;
@@ -25,7 +24,8 @@ public class TrappedBrassCallBellBlockEntity extends BlockEntity {
             }
         }
         if (pLevel instanceof ServerLevel) {
-            if (pLevel.getBlockState(pPos).getValue(TrappedBrassCallBellBlock.DOWN)) {
+            if (pLevel.getBlockState(pPos).getValue(BrassCallBellBlock.DOWN)
+                    & pLevel.getBlockState(pPos).getBlock() instanceof BrassCallBellBlock.Trapped) {
                 pLevel.setBlock(pPos, CBBBlocks.TRAPPED_BRASS_CALL_BELL.get().defaultBlockState(), 3);
                 pLevel.updateNeighbourForOutputSignal(pPos, CBBBlocks.TRAPPED_BRASS_CALL_BELL.get());
             }

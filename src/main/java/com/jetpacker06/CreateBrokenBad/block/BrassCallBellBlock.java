@@ -1,7 +1,7 @@
 package com.jetpacker06.CreateBrokenBad.block;
 
 import com.jetpacker06.CreateBrokenBad.block.blockentity.BrassCallBellBlockEntity;
-import com.jetpacker06.CreateBrokenBad.register.AllBlockEntities;
+import com.jetpacker06.CreateBrokenBad.register.CBBBlockEntities;
 import com.jetpacker06.CreateBrokenBad.register.AllCustomTriggerAdvancements;
 import com.jetpacker06.CreateBrokenBad.register.AllSoundEvents;
 import net.minecraft.core.BlockPos;
@@ -27,8 +27,10 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.stream.Stream;
 
 public class BrassCallBellBlock extends BaseEntityBlock {
@@ -38,7 +40,7 @@ public class BrassCallBellBlock extends BaseEntityBlock {
     public static BooleanProperty DOWN = BooleanProperty.create("down");
 
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+    public @NotNull VoxelShape getShape(BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
         if (pState.getValue(DOWN)) {
             return downShape;
         } else {
@@ -59,6 +61,7 @@ public class BrassCallBellBlock extends BaseEntityBlock {
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
     @Nullable
     @Override
+    @ParametersAreNonnullByDefault
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         return this.defaultBlockState().setValue(DOWN, false);
     }
@@ -67,8 +70,9 @@ public class BrassCallBellBlock extends BaseEntityBlock {
         pBuilder.add(DOWN);
     }
 
+    @ParametersAreNonnullByDefault
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    public @NotNull InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (pPlayer instanceof ServerPlayer) {
             AllCustomTriggerAdvancements.DING.trigger((ServerPlayer) pPlayer);
         }
@@ -77,26 +81,32 @@ public class BrassCallBellBlock extends BaseEntityBlock {
         pLevel.playSound(pPlayer,pPos, AllSoundEvents.BRASS_CALL_BELL_DING.get(), SoundSource.BLOCKS, 2f, 1f);
         return InteractionResult.sidedSuccess(pLevel.isClientSide);
     }
+    @ParametersAreNonnullByDefault
     @Override
-    public RenderShape getRenderShape(BlockState pState) {
+    @SuppressWarnings("deprecation")
+    public @NotNull RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
     }
 
     @Nullable
     @Override
+    @ParametersAreNonnullByDefault
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new BrassCallBellBlockEntity(pPos, pState);
+        return new BrassCallBellBlockEntity(CBBBlockEntities.BRASS_CALL_BELL.get(), pPos, pState);
     }
 
     @Override
+    @ParametersAreNonnullByDefault
+    @SuppressWarnings("deprecation")
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         pLevel.removeBlockEntity(pPos);
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
 
     @Nullable
+    @ParametersAreNonnullByDefault
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        return createTickerHelper(pBlockEntityType, AllBlockEntities.BRASS_CALL_BELL.get(), BrassCallBellBlockEntity::tick);
+        return createTickerHelper(pBlockEntityType, CBBBlockEntities.BRASS_CALL_BELL.get(), BrassCallBellBlockEntity::tick);
     }
 }

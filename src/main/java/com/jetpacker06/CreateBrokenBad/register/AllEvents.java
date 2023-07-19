@@ -21,18 +21,18 @@ public class AllEvents {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         if (event.getType() == VillagerProfession.FARMER) {
             ItemStack inputStack = new ItemStack(Items.EMERALD, 2);
-            ItemStack outputStack = new ItemStack(AllItems.EPHEDRA.get(), 8);
+            ItemStack outputStack = new ItemStack(CBBItems.EPHEDRA.get(), 8);
             trades.get(1).add((trader, rand) -> new MerchantOffer(
                     inputStack,
                     outputStack,
                     10,8,0.02F));
         }
         trades.get(2).add((trader, rand) -> new MerchantOffer(
-                new ItemStack(AllItems.WHITE_METH.get()),
+                new ItemStack(CBBItems.WHITE_METH.get()),
                 new ItemStack(Items.EMERALD, 2),
                 10,8,0.02F));
         trades.get(3).add((trader, rand) -> new MerchantOffer(
-                new ItemStack(AllItems.BLUE_METH.get()),
+                new ItemStack(CBBItems.BLUE_METH.get()),
                 new ItemStack(Items.EMERALD, 3),
                 10,8,0.02F));
     }

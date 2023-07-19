@@ -1,16 +1,16 @@
 package com.jetpacker06.CreateBrokenBad.block;
 
-import com.jetpacker06.CreateBrokenBad.register.AllItems;
+import com.jetpacker06.CreateBrokenBad.register.CBBItems;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.BeetrootBlock;
 
-public class EphedraCropBlock extends BeetrootBlock {
-    public  EphedraCropBlock(Properties p_49661_) {
+public class EphedraBlock extends BeetrootBlock {
+    public EphedraBlock(Properties p_49661_) {
         super(p_49661_);
     }
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return AllItems.EPHEDRA_SEEDS.get();
+        return CBBItems.EPHEDRA_SEEDS.get();
     }
 }

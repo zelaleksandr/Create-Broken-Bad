@@ -1,7 +1,7 @@
 package com.jetpacker06.CreateBrokenBad.block;
 
 import com.jetpacker06.CreateBrokenBad.block.blockentity.TrappedBrassCallBellBlockEntity;
-import com.jetpacker06.CreateBrokenBad.register.AllBlockEntities;
+import com.jetpacker06.CreateBrokenBad.register.CBBBlockEntities;
 import com.jetpacker06.CreateBrokenBad.register.AllCustomTriggerAdvancements;
 import com.jetpacker06.CreateBrokenBad.register.AllSoundEvents;
 import net.minecraft.core.BlockPos;
@@ -96,12 +96,12 @@ public class TrappedBrassCallBellBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new TrappedBrassCallBellBlockEntity(pPos, pState);
+        return new TrappedBrassCallBellBlockEntity(CBBBlockEntities.TRAPPED_BRASS_CALL_BELL.get(), pPos, pState);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        return createTickerHelper(pBlockEntityType, AllBlockEntities.TRAPPED_BRASS_CALL_BELL.get(), TrappedBrassCallBellBlockEntity::tick);
+        return createTickerHelper(pBlockEntityType, CBBBlockEntities.TRAPPED_BRASS_CALL_BELL.get(), TrappedBrassCallBellBlockEntity::tick);
     }
 }

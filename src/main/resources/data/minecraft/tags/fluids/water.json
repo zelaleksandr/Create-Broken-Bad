@@ -2,6 +2,13 @@
   "replace": false,
   "values": [
     "createbb:liquid_methamphetamine",
-    "createbb:liquid_methamphetamine_flowing"
+    "createbb:methylamine",
+    "createbb:methanol",
+    "createbb:hydrogen",
+    "createbb:oxygen",
+    "createbb:ammonia",
+    "createbb:phenylacetic_acid",
+    "createbb:acetic_anhydride",
+    "createbb:phenylacetone"
   ]
 }

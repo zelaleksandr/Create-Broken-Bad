@@ -16,7 +16,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.stream.Stream;
 
-public class TrayBlock extends Block {
+public abstract class TrayBlock extends HorizontalDirectionalBlock {
     public TrayBlock(Properties p_49795_) {
         super(p_49795_);
     }
